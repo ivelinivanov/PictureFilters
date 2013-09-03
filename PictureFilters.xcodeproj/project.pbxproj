@@ -117,7 +117,6 @@
 				5501CCAD17D4BCB400229D05 /* Main.storyboard */,
 				5501CCB017D4BCB400229D05 /* ViewController.h */,
 				5501CCB117D4BCB400229D05 /* ViewController.m */,
-				5501CCB317D4BCB400229D05 /* Images.xcassets */,
 				5501CCA217D4BCB400229D05 /* Supporting Files */,
 			);
 			path = PictureFilters;
@@ -126,6 +125,7 @@
 		5501CCA217D4BCB400229D05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5501CCB317D4BCB400229D05 /* Images.xcassets */,
 				5501CCA317D4BCB400229D05 /* PictureFilters-Info.plist */,
 				5501CCA417D4BCB400229D05 /* InfoPlist.strings */,
 				5501CCA717D4BCB400229D05 /* main.m */,
