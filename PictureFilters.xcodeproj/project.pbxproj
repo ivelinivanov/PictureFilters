@@ -21,6 +21,8 @@
 		5501CCBD17D4BCB400229D05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501CC9F17D4BCB400229D05 /* UIKit.framework */; };
 		5501CCC517D4BCB400229D05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5501CCC317D4BCB400229D05 /* InfoPlist.strings */; };
 		5501CCC717D4BCB400229D05 /* PictureFiltersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501CCC617D4BCB400229D05 /* PictureFiltersTests.m */; };
+		554D772917D5ECD4000EAB68 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 554D772717D5ECD4000EAB68 /* Icon.png */; };
+		554D772A17D5ECD4000EAB68 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 554D772817D5ECD4000EAB68 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		5501CCC217D4BCB400229D05 /* PictureFiltersTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PictureFiltersTests-Info.plist"; sourceTree = "<group>"; };
 		5501CCC417D4BCB400229D05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5501CCC617D4BCB400229D05 /* PictureFiltersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureFiltersTests.m; sourceTree = "<group>"; };
+		554D772717D5ECD4000EAB68 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		554D772817D5ECD4000EAB68 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 		5501CCA117D4BCB400229D05 /* PictureFilters */ = {
 			isa = PBXGroup;
 			children = (
+				554D772717D5ECD4000EAB68 /* Icon.png */,
+				554D772817D5ECD4000EAB68 /* Icon@2x.png */,
 				5501CCAA17D4BCB400229D05 /* AppDelegate.h */,
 				5501CCAB17D4BCB400229D05 /* AppDelegate.m */,
 				5501CCAD17D4BCB400229D05 /* Main.storyboard */,
@@ -228,9 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554D772917D5ECD4000EAB68 /* Icon.png in Resources */,
 				5501CCB417D4BCB400229D05 /* Images.xcassets in Resources */,
 				5501CCA617D4BCB400229D05 /* InfoPlist.strings in Resources */,
 				5501CCAF17D4BCB400229D05 /* Main.storyboard in Resources */,
+				554D772A17D5ECD4000EAB68 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +462,7 @@
 				5501CCCC17D4BCB400229D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5501CCCD17D4BCB400229D05 /* Build configuration list for PBXNativeTarget "PictureFiltersTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +471,7 @@
 				5501CCCF17D4BCB400229D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
