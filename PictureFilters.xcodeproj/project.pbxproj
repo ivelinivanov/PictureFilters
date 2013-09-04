@@ -23,6 +23,7 @@
 		5501CCC717D4BCB400229D05 /* PictureFiltersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501CCC617D4BCB400229D05 /* PictureFiltersTests.m */; };
 		554D772917D5ECD4000EAB68 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 554D772717D5ECD4000EAB68 /* Icon.png */; };
 		554D772A17D5ECD4000EAB68 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 554D772817D5ECD4000EAB68 /* Icon@2x.png */; };
+		55FD70B917D72E830076A10F /* UIImage+Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = 55FD70B817D72E830076A10F /* UIImage+Filters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		5501CCC617D4BCB400229D05 /* PictureFiltersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureFiltersTests.m; sourceTree = "<group>"; };
 		554D772717D5ECD4000EAB68 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		554D772817D5ECD4000EAB68 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		55FD70B717D72E830076A10F /* UIImage+Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filters.h"; sourceTree = "<group>"; };
+		55FD70B817D72E830076A10F /* UIImage+Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filters.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				5501CCB017D4BCB400229D05 /* ViewController.h */,
 				5501CCB117D4BCB400229D05 /* ViewController.m */,
 				5501CCA217D4BCB400229D05 /* Supporting Files */,
+				55FD70B717D72E830076A10F /* UIImage+Filters.h */,
+				55FD70B817D72E830076A10F /* UIImage+Filters.m */,
 			);
 			path = PictureFilters;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5501CCB217D4BCB400229D05 /* ViewController.m in Sources */,
+				55FD70B917D72E830076A10F /* UIImage+Filters.m in Sources */,
 				5501CCAC17D4BCB400229D05 /* AppDelegate.m in Sources */,
 				5501CCA817D4BCB400229D05 /* main.m in Sources */,
 			);

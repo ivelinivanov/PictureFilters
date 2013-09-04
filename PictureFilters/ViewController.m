@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIImage+Filters.h"
 
 @interface ViewController ()
 
@@ -103,108 +104,6 @@
 
 }
 
-#pragma mark - Filter applying methods
-
--(void)applySepia
-{
-    CIImage *beginImage = [CIImage imageWithData:UIImagePNGRepresentation(self.originalImage)];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone" keysAndValues: kCIInputImageKey, beginImage, @"inputIntensity", [NSNumber numberWithFloat:0.8], nil];
-    
-    CIImage *outputImage = [filter outputImage];
-    
-    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-    UIImage *newImg = [UIImage imageWithCGImage:cgimg];
-    
-    self.imageView.image = newImg;
-    
-    CGImageRelease(cgimg);
-}
-
-
--(void)applyMonochrome
-{
-    CIImage *beginImage = [CIImage imageWithData:UIImagePNGRepresentation(self.originalImage)];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CIFilter *filter = [CIFilter filterWithName:@"CIColorMonochrome" keysAndValues: kCIInputImageKey, beginImage, @"inputIntensity", [NSNumber numberWithFloat:0.8], nil];
-    
-    CIImage *outputImage = [filter outputImage];
-    
-    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-    UIImage *newImg = [UIImage imageWithCGImage:cgimg];
-    
-    self.imageView.image = newImg;
-    
-    CGImageRelease(cgimg);
-}
-
--(void)applyInvert
-{
-    CIImage *ciImage = [CIImage imageWithData:UIImagePNGRepresentation(self.originalImage)];
-    
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CIFilter *filter = [CIFilter filterWithName:@"CIColorInvert"];
-    
-    [filter setDefaults];
-    [filter setValue:ciImage forKey:@"inputImage"];
-    CIImage *output = [filter valueForKey:@"outputImage"];
-    
-    CGImageRef cgimg = [context createCGImage:output fromRect:[output extent]];
-    UIImage *newImg = [UIImage imageWithCGImage:cgimg];
-    
-    self.imageView.image = newImg;
-    
-    CGImageRelease(cgimg);
-}
-
--(void)applyPosterize
-{
-    CIImage *beginImage = [CIImage imageWithData:UIImagePNGRepresentation(self.originalImage)];
-    
-    CIContext *context = [CIContext contextWithOptions:nil];
-    
-    CIFilter* posterize = [CIFilter filterWithName:@"CIColorPosterize"];
-    [posterize setDefaults];
-    [posterize setValue:[NSNumber numberWithDouble:8.0] forKey:@"inputLevels"];
-    [posterize setValue:beginImage forKey:@"inputImage"];
-    
-    CIImage *outputImage = [posterize outputImage];
-    
-    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
-    UIImage *newImg = [UIImage imageWithCGImage:cgimg];
-    
-    self.imageView.image = newImg;
-    
-    CGImageRelease(cgimg);
-}
-
-
--(void)applyBlackAndWhite
-{
-    CGColorSpaceRef colorSapce = CGColorSpaceCreateDeviceGray();
-    CGContextRef context = CGBitmapContextCreate(nil, self.originalImage.size.width, self.originalImage.size.height, 8, self.originalImage.size.width, colorSapce, kCGImageAlphaNone);
-    
-    CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
-    CGContextSetShouldAntialias(context, NO);
-    CGContextDrawImage(context, CGRectMake(0, 0, self.originalImage.size.width, self.originalImage.size.height), [self.originalImage CGImage]);
-    
-    CGImageRef bwImage = CGBitmapContextCreateImage(context);
-    CGContextRelease(context);
-    CGColorSpaceRelease(colorSapce);
-    
-    UIImage *resultImage = [UIImage imageWithCGImage:bwImage]; // This is result B/W image.
-    
-    self.imageView.image = resultImage;
-
-    CGImageRelease(bwImage);
-}
-
-
-
-
 #pragma mark - UIImagePicker delegate methods
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -226,19 +125,19 @@
     switch (buttonIndex)
     {
         case 0:
-            [self applySepia];
+            self.imageView.image = [self.originalImage applySepia];
             break;
         case 1:
-            [self applyMonochrome];
+            self.imageView.image = [self.originalImage applyMonochrome];
             break;
         case 2:
-            [self applyInvert];
+            self.imageView.image = [self.originalImage applyInvert];
             break;
         case 3:
-            [self applyPosterize];
+            self.imageView.image = [self.originalImage applyPosterize];
             break;
         case 4:
-            [self applyBlackAndWhite];
+            self.imageView.image = [self.originalImage applyBlackAndWhite];
             break;
         default:
             break;
